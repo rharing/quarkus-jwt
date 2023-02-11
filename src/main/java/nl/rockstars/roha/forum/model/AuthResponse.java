@@ -1,4 +1,4 @@
-package com.ard333.quarkusjwt.model;
+package nl.rockstars.roha.forum.model;
 
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
@@ -9,8 +9,8 @@ import lombok.ToString;
  * @author ard333
  */
 @NoArgsConstructor @AllArgsConstructor @ToString
-public class Message {
+public class AuthResponse {
 	
-	public String content;
+	public String token;
 
 }

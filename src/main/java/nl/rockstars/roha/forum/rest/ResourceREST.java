@@ -1,13 +1,15 @@
-package com.ard333.quarkusjwt.rest;
+package nl.rockstars.roha.forum.rest;
 
 import javax.annotation.security.RolesAllowed;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
+import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
+import javax.ws.rs.core.SecurityContext;
 
-import com.ard333.quarkusjwt.model.Message;
+import nl.rockstars.roha.forum.model.Message;
 
 /**
  *
@@ -18,7 +20,8 @@ public class ResourceREST {
 
 	@RolesAllowed("USER")
 	@GET @Path("/user") @Produces(MediaType.APPLICATION_JSON)
-	public Response user() {
+	public Response user(@Context SecurityContext ctx) {
+
 		return Response.ok(new Message("Content for user")).build();
 	}
 	

@@ -1,4 +1,4 @@
-package com.ard333.quarkusjwt.util;
+package nl.rockstars.roha.forum.util;
 
 import java.security.NoSuchAlgorithmException;
 import java.security.spec.InvalidKeySpecException;
@@ -17,9 +17,9 @@ import org.eclipse.microprofile.config.inject.ConfigProperty;
 @RequestScoped
 public class PBKDF2Encoder {
 	
-	@ConfigProperty(name = "com.ard333.quarkusjwt.password.secret")  private String secret;
-	@ConfigProperty(name = "com.ard333.quarkusjwt.password.iteration")  private Integer iteration;
-	@ConfigProperty(name = "com.ard333.quarkusjwt.password.keylength")  private Integer keylength;
+	@ConfigProperty(name = "nl.rockstars.roha.forum.quarkusjwt.password.secret")  private String secret;
+	@ConfigProperty(name = "nl.rockstars.roha.forum.quarkusjwt.password.iteration")  private Integer iteration;
+	@ConfigProperty(name = "nl.rockstars.roha.forum.quarkusjwt.password.keylength")  private Integer keylength;
 	
 	/**
 	 * More info (https://www.owasp.org/index.php/Hashing_Java) 404 :(

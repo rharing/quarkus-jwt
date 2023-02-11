@@ -1,4 +1,4 @@
-package com.ard333.quarkusjwt.util;
+package nl.rockstars.roha.forum.util;
 
 import java.io.InputStream;
 import java.security.KeyFactory;
@@ -8,7 +8,7 @@ import java.util.Base64;
 import java.util.HashSet;
 import java.util.Set;
 
-import com.ard333.quarkusjwt.model.Role;
+import nl.rockstars.roha.forum.model.Role;
 
 import io.smallrye.jwt.build.Jwt;
 import io.smallrye.jwt.build.JwtClaimsBuilder;

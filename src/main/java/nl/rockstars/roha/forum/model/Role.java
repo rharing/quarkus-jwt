@@ -1,4 +1,4 @@
-package com.ard333.quarkusjwt.model;
+package nl.rockstars.roha.forum.model;
 
 /**
  *

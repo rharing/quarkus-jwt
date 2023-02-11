@@ -1,25 +1,37 @@
-package com.ard333.quarkusjwt.model;
+package nl.rockstars.roha.forum.model;
 
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
-import lombok.AllArgsConstructor;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
-import lombok.ToString;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import lombok.*;
+
+import javax.persistence.*;
 
 /**
  *
  * @author ard333
  */
-@NoArgsConstructor @AllArgsConstructor @ToString @EqualsAndHashCode(callSuper = false)
+@Entity
+@Table(name = "forum_user")
+ @ToString @EqualsAndHashCode(callSuper = false)
+@Data
 public class User {
+	@Id
+	@GeneratedValue
+	private Long id;
+	private String username;
+	private String password;
+	@ElementCollection(fetch = FetchType.EAGER)
+	private Set<Role> roles;
 
-	public String username;
-	public String password;
-	public Set<Role> roles;
+	public User() {
+	}
+
+	public User(String username, String password, Set<Role> roles) {
+		this.username = username;
+		this.password = password;
+		this.roles = roles;
+	}
 
 	// this is just an example, you can load the user from the database (via PanacheEntityBase)
 	public static User findByUsername(String username) {

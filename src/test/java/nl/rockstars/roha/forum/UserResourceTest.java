@@ -1,4 +1,4 @@
-package com.ard333.quarkusjwt;
+package nl.rockstars.roha.forum;
 
 import io.quarkus.test.junit.QuarkusTest;
 import io.restassured.http.ContentType;
@@ -51,6 +51,13 @@ public class UserResourceTest {
 				.then()
 				.assertThat()
 				.statusCode(200);
+	given()
+				.headers(headers)
+				.when()
+				.get("/resource/admin")
+				.then()
+				.assertThat()
+				.statusCode(403);
 
 	}
 	@Test
