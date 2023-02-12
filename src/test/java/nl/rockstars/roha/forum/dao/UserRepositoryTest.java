@@ -1,5 +1,6 @@
 package nl.rockstars.roha.forum.dao;
 
+import io.quarkus.test.TestTransaction;
 import io.quarkus.test.junit.QuarkusTest;
 import nl.rockstars.roha.forum.model.Role;
 import nl.rockstars.roha.forum.model.User;
@@ -17,7 +18,7 @@ import static org.junit.jupiter.api.Assertions.*;
  */
 
 @QuarkusTest
-@Transactional
+@TestTransaction
 class UserRepositoryTest {
 
     @Inject
